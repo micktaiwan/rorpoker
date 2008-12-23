@@ -1,0 +1,18 @@
+<h2>&nbsp;</h2>
+
+<h3>Perdu le pass ?</h3>
+<br/>
+<% form_remote_tag(:update =>'status',:url => { :action => :send_reset_email }, :loading=>"$('status').innerHTML='Sending...'") do -%>
+<label for="email">Email:</label>
+<%= text_field_tag :email -%>
+<%= submit_tag "Send &#187;" -%>
+<% end -%>
+
+
+<div id='status'></div>
+<br/>
+<br/>
+<br/>
+<%= I18n.t :about %>
+
+
