@@ -1,0 +1,41 @@
+﻿# Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+fr:
+  login:                  Login
+  new_account:            Créer un nouveau compte
+  email:                  Email
+  pwd:                    Passe
+  groups:                 Groupes
+  dashboard:              accueil
+  profile:                profile
+  logout:                 logout
+  msg_login_KO:           Problème à la connexion
+  msg_login_OK:           Vous êtes connecté
+  about:                  <h2>A propos</h2><p>Juste un petit site pour gérer nos parties de poker !</p><h3>Open source</h3><p>This application is entirely free. You can use this site directly or <a href="http://code.google.com/p/rorpoker/">download the Rails source code</a>.</p>
+  name:                   Nom
+  expl_name:              Votre vrai nom (affiché)
+  expl_email:             Votre email (votre identifiant)
+  pwd_confirm:            Confirmer
+  expl_pwd_confirm:       Taper votre mot de passe encore une fois
+  signup:                 Ouvrir un compte
+  last_registered_users:  Derniers utilisateurs enregistrés
+  last_groups:            Derniers groupes
+  last_games:             Dernières parties
+  errors_name_taken:      Ce nom est déjà pris
+  errors_email_taken:     cet email est déjà enregistré
+  create_group:           Créer un groupe
+  create_game:            Nouvelle partie
+  activerecord:
+    errors:
+      template:
+        header:           Oooops
+        body:             Des erreurs ont eu lieu
+      models:
+        user:
+          attributes:
+            password:
+              blank:      ne peut pas être laissé blanc
+              confirmation: et la confirmation ne sont pas les mêmes
+            password_confirmation:
+              blank:      ne peut pas être laissé blanc (doit être le même que le mot de passe)

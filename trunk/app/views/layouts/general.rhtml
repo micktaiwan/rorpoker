@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="Mickael Faivre-Macon" />
+	<meta name="keywords" content="poker, manager, rails" />
+	<meta name="description" content="Poker friend tour manager" />
+	<meta name="robots" content="all" />
+	<title>RoR Poker - Friend poker tour manager</title>
+	<%= javascript_include_tag "prototype", "effects", "controls", "application",  "dragdrop" %>
+	<style type="text/css" title="currentStyle" media="screen">
+		@import '/stylesheets/styles.css';
+	</style>
+</head>
+<body>
+<div id="container">
+<% user = session['user'] -%>
+<% cur = @controller.class.controller_path -%>
+<ul id="header">
+  <span id="clock"><%=Date.today.strftime('%A %b %d %Y')%></span>
+  <span <% if cur=="welcome" then%>id="currentmenuline" <%end%>class="menuline"><a href="/"><%=I18n.t :dashboard%></a></span>
+  <% if user %>
+    <span <% if cur=="myinfo" then%>id="currentmenuline" <%end%> class="menuline"><a href="/myinfo"><%=I18n.t :profile%></a></span>
+    <span id="logout"><a href="/account/logout"><%=I18n.t :logout%></a></span>
+  <% end %>
+  <span <% if I18n.locale=="en" then%>id="currentmenuline" <%end%>class="menuline"><a href="?locale=en">en</a></span>
+  <span <% if I18n.locale=="fr" then%>id="currentmenuline" <%end%>class="menuline"><a href="?locale=fr">fr</a></span>
+</ul>
+<div id="side">
+
+  <% if not user %>
+    <!-- Login -->
+    <h3><%= I18n.t :login %></h3>
+    <%=link_to(I18n.t(:new_account), {:controller=>'account', :action=>'signup'})%><br/>
+    <br/>
+    <div title="Account login" id="loginform" class="form">
+    <% form_tag :controller=>'account', :action=> "login" do %>
+      <label><%= I18n.t :email %></label>:
+      <input type="text" name="user[email]" id="user_email" size="10" value=""/><br/>
+      <%= I18n.t :pwd %> :
+      <input type="password" name="user[password]" id="user_password" size="10"/><br/>
+      <input type="submit" name="login" value="<%= I18n.t :login %> &#187;" class="submitbutton" /> <% if @message %><div id="notice"><%= @message %></div><% end %>
+    <% end %>
+    <br/>
+    </div>
+  <% else %>
+    <!-- Group list -->
+    <% if user.groups.size > 0 %>
+      <h3><%= I18n.t :groups %></h3>
+      <ul>
+      <%= render(:partial=>'group/list.rhtml', :collection=>user.active_groups.sort_by{|p| p.name.downcase}) %>
+      </ul>
+    <% end %>
+    
+    <!-- sub menu -->
+    <% if cur!="myinfo" %>
+      <div class='button'><%= link_to(I18n.t(:create_game), {:controller=>'game',:action=>'create'}) %></div>
+      <div class='button'><%= link_to(I18n.t(:create_group), {:controller=>'group',:action=>'create'}) %></div>
+    <% end %>
+    
+  <% end %>
+
+  <br/>
+
+  <div id="notice"><% if flash[:notice] -%>Notice<%= flash[:notice] %><% end -%></div>
+  <div id="info"><% if flash[:info] -%>Info<%= flash[:info] %><% end -%></div>  
+  <div id="members"><% if flash[:members] -%><%= flash[:members] %><% end -%></div>  
+
+  <br/></div>
+
+<!-- yield -->
+<%= yield %>
+
+<p><br/></p>
+
+<div id="footer">
+RoR Poker beta version |
+For any ideas, please write to us: <a href="mailto:protask@protaskm.com">protask@protaskm.com</a>
+</div>
+</div>
+
+</body>
+</html>
