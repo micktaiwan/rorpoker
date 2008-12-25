@@ -1,0 +1,23 @@
+<h2><%= @group.name %></h2>
+<div class="button_bar">
+<% if session['user'] %>
+  <% if not session['user'].groups.include?(@group) %>
+    <%= link_to(I18n.t(:join_group), {:controller=>'group',:action=>'join', :id=>@group.id}, {:class=>:button}) %>
+  <% else %>
+    <%= link_to(I18n.t(:create_game), {:controller=>'game',:action=>'create_form', :id=>@group.id}, {:class=>:button}) %>
+    <%= link_to(I18n.t(:edit), {:controller=>'group',:action=>'edit_form', :id=>@group.id}, {:class=>:button}) %>
+  <% end %>
+<% end %>
+</div>
+
+<%= simple_format @group.descr %>
+
+
+<h3><%= I18n.t(:rankings) %></h3>
+<ol>
+<% for user in @group.rankings(:cash) %>
+
+  <li><b><%= user.name %></b> <%= user.chips(@group.id) %></li>
+
+<% end %>
+</ol>

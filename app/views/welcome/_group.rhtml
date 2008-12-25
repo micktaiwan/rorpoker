@@ -1,1 +1,1 @@
-<li><%= group.name %> <%= group.created_at %></li>
+<li><%= link_to(group.name,:controller=>:group,:action=>:view,:id=>group.id) %> (<%= group.users.size %> <%=I18n.t(:nb_players)%>, <%= time_ago_in_words(group.created_at) %>)</li>

@@ -1,1 +1,1 @@
-<li><%= user.name %> <%= user.created_at %></li>
+<li><%= user.name %> (<%= time_ago_in_words(user.created_at) %>)</li>

@@ -1,6 +1,6 @@
 <h2>&nbsp;</h2>
 
-<h3>Perdu le pass ?</h3>
+<h3><%= I18n.t(:title_lost_pwd) %></h3>
 <br/>
 <% form_remote_tag(:update =>'status',:url => { :action => :send_reset_email }, :loading=>"$('status').innerHTML='Sending...'") do -%>
 <label for="email">Email:</label>
@@ -13,6 +13,6 @@
 <br/>
 <br/>
 <br/>
-<%= I18n.t :about %>
+<%= I18n.t(:msg_about) %>
 
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081223115154) do
+ActiveRecord::Schema.define(:version => 20081224231604) do
 
   create_table "comments", :force => true do |t|
     t.integer  "game_id",    :null => false
@@ -19,16 +19,19 @@ ActiveRecord::Schema.define(:version => 20081223115154) do
   end
 
   create_table "games", :force => true do |t|
-    t.integer  "group_id",   :null => false
-    t.datetime "created_at", :null => false
+    t.integer  "group_id",                       :null => false
+    t.datetime "created_at",                     :null => false
     t.date     "date"
     t.string   "place"
+    t.text     "descr"
+    t.string   "type",       :default => "cash", :null => false
   end
 
   create_table "groups", :force => true do |t|
     t.string   "name",       :limit => 40, :default => "", :null => false
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+    t.text     "descr"
   end
 
   create_table "invitations", :force => true do |t|
@@ -47,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20081223115154) do
     t.integer  "user_id",                   :null => false
     t.datetime "created_at",                :null => false
     t.integer  "active",     :default => 1
+    t.integer  "chips",      :default => 0, :null => false
   end
 
   create_table "particips", :force => true do |t|
