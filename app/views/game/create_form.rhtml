@@ -20,12 +20,12 @@ Not done yet !
 <%= text_area(:game,:descr, :rows=>4) %><br/>
 
 <label><%= I18n.t :game_type %>:</label>
-<%= select( :game, :type, { I18n.t(:game_type_cash) => "cash", I18n.t(:game_type_tourney) => "tourney"}) %><br/>
+<%= select( :game, :game_type, { I18n.t(:game_type_cash) => "cash", I18n.t(:game_type_tourney) => "tourney"}) %><br/>
 
 <label for="player_list"><%= I18n.t :players %>:</label><br/>
 <ul id="player_list" class="player_list">
 <% for user in @group.users %>
-  <li><%= check_box(:players,:played) %> <%= user.name %></li>
+  <li><%= check_box(:players,:played) %> <b><%= user.name %></b> (<a href="mailto:<%= user.email %>"><%= user.email %></a>)</li>
 <% end %>
 </ul>
 

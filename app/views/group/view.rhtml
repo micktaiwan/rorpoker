@@ -12,12 +12,16 @@
 
 <%= simple_format @group.descr %>
 
-
 <h3><%= I18n.t(:rankings) %></h3>
 <ol>
 <% for user in @group.rankings(:cash) %>
-
   <li><b><%= user.name %></b> <%= user.chips(@group.id) %></li>
+<% end %>
+</ol>
 
+<h3><%= I18n.t(:last_games) %></h3>
+<ol>
+<% for game in @games %>
+  <li><b><%= game.name %></b> <%= game.date %></li>
 <% end %>
 </ol>

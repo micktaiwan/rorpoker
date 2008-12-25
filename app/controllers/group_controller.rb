@@ -8,6 +8,7 @@ class GroupController < ApplicationController
   
   def view
     @group = Group.find(params[:id])
+    @games = Game.find(:all,:conditions=>"group_id=#{@group.id}", :order=>"`date` desc", :limit=>20)
   end
   
   def edit_form
