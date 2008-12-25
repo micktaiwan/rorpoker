@@ -11,6 +11,7 @@ end
 class Group < ActiveRecord::Base
   has_many :memberships
 	has_many :users, :through=>:memberships #, :select => "opinions.rating, opinions.comment, movies.*"
+  has_many :games
  
   serialize :settings, GroupSettings
   
