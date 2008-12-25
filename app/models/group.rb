@@ -10,12 +10,15 @@ end
 
 class Group < ActiveRecord::Base
   has_many :memberships
-	has_many :users, :through=>:memberships#, :select => "opinions.rating, opinions.comment, movies.*"
+	has_many :users, :through=>:memberships #, :select => "opinions.rating, opinions.comment, movies.*"
  
   serialize :settings, GroupSettings
   
   def init_settings
-    self.settings = GroupSettings.new if self.settings == nil
+    if self.settings == nil
+      self.settings = GroupSettings.new 
+      self.save
+    end
   end
 
   # return users ordered by winners
