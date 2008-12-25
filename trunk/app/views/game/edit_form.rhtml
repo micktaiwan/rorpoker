@@ -1,30 +1,25 @@
-<h2><%= I18n.t(:title_create_game)%></h2>
+<h2><%= I18n.t(:title_edit_game)%></h2>
 
 Not done yet !
 
 <br/>
 <br/>
-<br/>
-<br/>
 
-<%= I18n.t :expl_create_game %><br/>
-<br/>
-<% form_tag :controller=>'game', :action=> "create" do %>
+<% form_tag :controller=>:game, :action=>:edit, :id=>@game.id do %>
 <label><%= I18n.t :name %>:</label>
 <%= text_field(:game,:name,:value=>Date.today) %><br/>
 <label><%= I18n.t :game_date %>:</label>
 <%= text_field(:game,:date,:value=>Date.today) %><br/>
 <label><%= I18n.t :game_place %>:</label>
-<%= text_field(:game,:place,:value=>@group.settings.default_place) %><br/>
+<%= text_field(:game,:place) %><br/>
 
 <label><%= I18n.t :game_type %>:</label>
-<%= select( :game, :game_type, { I18n.t(:game_type_cash) => "cash", I18n.t(:game_type_tourney) => "tourney"}) %><br/>
+<%= @game.type_to_s %>
+<%#= select( :game, :game_type, { I18n.t(:game_type_cash) => "cash", I18n.t(:game_type_tourney) => "tourney"}) %><br/>
 
 <label for="player_list"><%= I18n.t :players %>:</label><br/>
 <ul id="player_list" class="player_list">
-<% for user in @group.users %>
-  <li><%= check_box(:players,:played) %> <b><%= user.name %></b> (<a href="mailto:<%= user.email %>"><%= user.email %></a>)</li>
-<% end %>
+<li>A faire</li>
 </ul>
 
 <label><%= I18n.t :comments %>:</label>

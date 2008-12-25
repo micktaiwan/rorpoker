@@ -85,7 +85,7 @@ img {
 }
 
 p {
-  padding: 2px;
+  margin: 0;
 }
 
 a {
@@ -215,18 +215,26 @@ input, select {
   }
 
 .btnlnk {
-    color: #343;
-    background: #CEC;
-    border: 1px solid #585;
-    padding: 1px 3px 1px 3px;
-    font-size: 10pt;
+  color: #343;
+  background: #CEC;
+  border: 1px solid #585;
+  padding: 1px 3px 1px 3px;
+  font-size: 10pt;
 }
 
+.game_descr {
+  color: black;
+  border: 1px solid #AA9;
+  background: #FFE;
+  padding: 5px;
+  margin: 10px 0 0 0;
+  }
+
 .groupbox {
-    border: 1px solid #AA9;
-    background: #FFE;
-    padding: 15px;
-    margin: 30px 0 0 0;
+  border: 1px solid #AA9;
+  background: #FFE;
+  padding: 15px;
+  margin: 30px 0 0 0;
 }
 
 .groupbox #title {
