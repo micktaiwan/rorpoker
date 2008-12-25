@@ -13,6 +13,18 @@ class GameController < ApplicationController
   
   def view
     @game = Game.find(params[:id])
+    @group = @game.group
   end
   
+  def edit_form
+    @game = Game.find(params[:id])
+  end
+
+  def edit
+    game = Game.find(params[:id])
+    game.update_attributes(params[:game])
+    game.save
+    redirect_to(:action=>:view, :id=>game.id)
+  end
+
 end

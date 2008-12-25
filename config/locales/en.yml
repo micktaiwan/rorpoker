@@ -23,6 +23,7 @@ en:
   title_create_group:     Create a new poker club/association/friend group
   title_edit_group:       Editing
   title_create_game:      Record a new game
+  title_edit_game:        Editing a game
   expl_create_game:       Once a game has been played, you can record the game here.
   comments:               Comments or description
   game_place:             Place

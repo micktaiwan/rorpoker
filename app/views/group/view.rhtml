@@ -21,7 +21,5 @@
 
 <h3><%= I18n.t(:last_games) %></h3>
 <ol>
-<% for game in @games %>
-  <li><b><%= game.name %></b> <%= game.date %></li>
-<% end %>
+<%= render(:partial=>'game', :collection=>@games) %>
 </ol>

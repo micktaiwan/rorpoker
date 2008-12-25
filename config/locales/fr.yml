@@ -23,6 +23,7 @@ fr:
   title_create_group:     Créer un nouveau club/association/groupe d'amis de poker
   title_edit_group:       Edition
   title_create_game:      Sauvegarder un nouveau jeu
+  title_edit_game:        Edition d'une partie
   expl_create_game:       Une fois une partie jouée, vous pouvez l'enregistrer ici.
   comments:               Commentaires ou description
   game_place:             Lieu
