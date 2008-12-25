@@ -8,6 +8,7 @@ en:
   pwd:                    Password
   your_groups:            Your groups
   nb_players:             players
+  nb_groups:              groups
   players:                Players
   edit:                   Edit
   menu_dashboard:         dashboard

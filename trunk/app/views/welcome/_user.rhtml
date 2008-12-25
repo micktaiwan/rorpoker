@@ -1,1 +1,1 @@
-<li><%= user.name %> (<%= time_ago_in_words(user.created_at) %>)</li>
+<li><%= user.name %> (<%= time_ago_in_words(user.created_at) %>, <%= user.groups.size %> <%= I18n.t(:nb_groups)%>)</li>

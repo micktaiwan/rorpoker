@@ -8,6 +8,7 @@ fr:
   pwd:                    Passe
   your_groups:            Vos groupes
   nb_players:             joueurs
+  nb_groups:              groupes
   players:                Joueurs
   edit:                   Editer
   menu_dashboard:         accueil

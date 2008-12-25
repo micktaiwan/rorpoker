@@ -2,7 +2,7 @@ class GroupController < ApplicationController
 
   def create
     group = Group.new(params[:group])
-    group.save
+    group.init_settings # will save the group
     join(group.id)
   end
   
