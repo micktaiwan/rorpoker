@@ -6,13 +6,32 @@ en:
   new_account:            Create a new account
   email:                  Email
   pwd:                    Password
-  groups:                 Groups
-  dashboard:              dashboard
-  profile:                profile
-  logout:                 logout
+  your_groups:            Your groups
+  nb_players:             players
+  players:                Players
+  edit:                   Edit
+  menu_dashboard:         dashboard
+  menu_profile:           profile
+  menu_logout:            logout
+  menu_about:             about
   msg_login_KO:           Login failed
   msg_login_OK:           You're now logged in
-  about:                  <h2>About</h2><p>Just a little app to manage our poker parties !</p><h3>Open source</h3><p>This application is entirely free. You can use this site directly or <a href="http://code.google.com/p/rorpoker/">download the Rails source code</a>.</p>
+  msg_about:              <h2>About</h2><p>Just a little app to manage our poker parties !</p><h3>Open source</h3><p>This application is entirely free. You can use this site directly or <a href="http://code.google.com/p/rorpoker/">download the Rails source code</a>.</p>
+  join_group:             Join this group
+  title_lost_pwd:         Lost your password ?
+  title_create_group:     Create a new poker club/association/friend group
+  title_edit_group:       Editing
+  title_create_game:      Record a new game
+  expl_create_game:       Once a game has been played, you can record the game here.
+  comments:               Comments or description
+  game_place:             Place
+  game_date:              Date
+  game_type:              Type
+  game_type_cash:         Cash game
+  game_type_tourney:      Tourney
+  submit:                 Submit
+  descr:                  Description
+  rankings:               Rankings
   name:                   Name
   expl_name:              Your real name (will be displayed)
   expl_email:             Your email (will become your login)

@@ -6,15 +6,34 @@ fr:
   new_account:            Créer un nouveau compte
   email:                  Email
   pwd:                    Passe
-  groups:                 Groupes
-  dashboard:              accueil
-  profile:                profile
-  logout:                 logout
+  your_groups:            Vos groupes
+  nb_players:             joueurs
+  players:                Joueurs
+  edit:                   Editer
+  menu_dashboard:         accueil
+  menu_profile:           profile
+  menu_logout:            logout
+  menu_about:             à propos
   msg_login_KO:           Problème à la connexion
   msg_login_OK:           Vous êtes connecté
-  about:                  <h2>A propos</h2><p>Juste un petit site pour gérer nos parties de poker !</p><h3>Open source</h3><p>This application is entirely free. You can use this site directly or <a href="http://code.google.com/p/rorpoker/">download the Rails source code</a>.</p>
+  msg_about:              <h2>A propos</h2><p>Juste un petit site pour gérer nos parties de poker !</p><h3>Open source</h3><p>This application is entirely free. You can use this site directly or <a href="http://code.google.com/p/rorpoker/">download the Rails source code</a>.</p>
+  join_group:             Adhérer à ce groupe
+  title_lost_pwd:         Perdu le passe ?
+  title_create_group:     Créer un nouveau club/association/groupe d'amis de poker
+  title_edit_group:       Edition
+  title_create_game:      Sauvegarder un nouveau jeu
+  expl_create_game:       Une fois une partie jouée, vous pouvez l'enregistrer ici.
+  comments:               Commentaires ou description
+  game_place:             Lieu
+  game_date:              Date
+  game_type:              Type
+  game_type_cash:         Cash game
+  game_type_tourney:      Tournoi
+  submit:                 Envoyer
+  descr:                  Description
+  rankings:               Classements
   name:                   Nom
-  expl_name:              Votre vrai nom (affiché)
+  expl_name:              Votre vrai nom (sera affiché)
   expl_email:             Votre email (votre identifiant)
   pwd_confirm:            Confirmer
   expl_pwd_confirm:       Taper votre mot de passe encore une fois

@@ -1,6 +1,6 @@
 <% form_tag :action=> "signup" do %>
 
-  <h2>Signup</h2>
+  <h2><%= I18n.t(:signup)%></h2>
   <%= error_messages_for 'user' %><br/>
   
   <label for="user_name"><%= I18n.t(:name)%>:</label>

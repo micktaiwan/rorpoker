@@ -1,0 +1,11 @@
+<h2><%= I18n.t(:title_create_group)%></h2>
+
+<% form_tag :controller=>'group', :action=> "create" do %>
+<label><%= I18n.t :name %>:</label>
+<%= text_field(:group,:name) %><br/>
+<label><%= I18n.t :descr %>:</label>
+<%= text_area(:group,:descr) %><br/>
+
+<input type="submit" value="<%= I18n.t :submit %> &#187;" class="submitbutton" />
+<% if @message -%><div id="notice"><%= @message %></div><% end %>
+<% end -%>

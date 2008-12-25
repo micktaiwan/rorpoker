@@ -7,14 +7,15 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
  
   def set_locale
-    locale = params[:locale] || session[:locale] || I18n.default_locale
+    return if not params[:locale]
+    locale = session[:locale] || I18n.default_locale
+    locale = (locale=='en'? 'fr':'en')
     session[:locale] = I18n.locale = locale
     
     # TODO
     #locale = params[:locale] || session[:locale] || (this_user.site_language if is_logged_in?) || I18n.default_locale
     #locale = AVAILABLE_LOCALES.keys.include?(locale) ? locale : I18n.default_locale
     #session[:locale] = I18n.locale = locale
-    
   end
   
 end
