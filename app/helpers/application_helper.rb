@@ -12,5 +12,5 @@ module ApplicationHelper
   def self.generate_key(nb=30)
     str=''; nb.times { str += (rand(26)+65).chr };str
   end
-
+  
 end

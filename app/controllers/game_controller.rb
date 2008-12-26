@@ -6,6 +6,7 @@ class GameController < ApplicationController
   def create_form
     @group = Group.find(params[:id])
     @group.init_settings
+    @users = @group.users.sort_by {|u| u.name.upcase}
   end
 
   def create
@@ -14,12 +15,13 @@ class GameController < ApplicationController
       game.players << User.find(id.to_i)
       } if params[:players]
     game.save
-    redirect_to(:action=>:view, :id=>game.id)
+    redirect_to(:action=>:edit_ranks_form, :id=>game.id)
   end
   
   def view
     @game = Game.find(params[:id])
     @group = @game.group
+    @players = @game.players.sort_by { |p| p.rank.to_i}
   end
   
   def edit_form
@@ -27,18 +29,32 @@ class GameController < ApplicationController
     @group = @game.group
     @checked = Hash.new(nil)
     @group.users.each{ |u| @checked[u.id] = @game.players.include?(u) ? true : nil}
+    @users = @group.users.sort_by {|u| u.name.upcase}
   end
 
   def edit
     game = Game.find(params[:id])
     game.update_attributes(params[:game])
-    if params[:players]
-      game.players.clear
-      params[:players].each { |id|
-        game.players << User.find(id.to_i)
-        } 
-    end
+    wanted = params[:players]
+    game.players = game.group.users.select { |p| wanted.include?(p.id.to_s) } if wanted
     game.save
+    redirect_to(:action=>:edit_ranks_form, :id=>game.id)
+  end
+  
+  def edit_ranks_form
+    @game = Game.find(params[:id])
+    @players = @game.players.sort_by {|u| u.name.upcase}
+  end
+
+  def edit_ranks
+    game = Game.find(params[:id])
+    chips = params[:chips]
+    chips.each {|k,v|
+      p = Particip.find(:first, :conditions=>"user_id=#{k} and game_id=#{game.id}")
+      p.chips = v.to_i
+      p.save
+      }
+    game.calcul_ranks if game.game_type == 'cash'
     redirect_to(:action=>:view, :id=>game.id)
   end
   

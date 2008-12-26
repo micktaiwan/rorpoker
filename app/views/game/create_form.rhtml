@@ -16,7 +16,7 @@
 
 <label for="player_list"><%= I18n.t :players %>:</label><br/>
 <ul id="player_list" class="player_list">
-  <%= render(:partial=>'player', :collection=>@group.users) %>
+  <%= render(:partial=>'player', :collection=>@users, :locals=>{:checked=>{}}) %>
   <li id="new_player" class="button_bar"><%= link_to_function(I18n.t(:add_new_player), "add_new_player(#{@group.id})", :class=>'btnlnk') %></li>
 </ul>
 

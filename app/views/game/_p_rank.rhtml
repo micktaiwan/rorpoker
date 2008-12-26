@@ -1,0 +1,4 @@
+<li>
+<div class='name' title='<%=p_rank.name%>'><%= truncate(p_rank.name,{:length=>12}) %></div>
+<%= text_field(:chips, p_rank.id, :value=>p_rank.gchips, :size=>6) %>
+</li>

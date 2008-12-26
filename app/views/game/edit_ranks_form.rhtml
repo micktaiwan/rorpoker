@@ -1,0 +1,10 @@
+<h2><%= I18n.t(:title_edit_game)%></h2>
+
+<% form_tag({:controller=>'game', :action=>'edit_ranks', :id=>@game.id},{:id=>'f'}) do %>
+<ul id="player_list">
+  <%= render(:partial=>'p_rank', :collection=>@players) %>
+</ul>
+
+<input type="submit" value="<%= I18n.t :submit %> &#187;" class="submitbutton" />
+
+<% end -%>
