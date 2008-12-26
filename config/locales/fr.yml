@@ -6,9 +6,11 @@ fr:
   new_account:            Créer un nouveau compte
   email:                  Email
   pwd:                    Passe
+  group:                  Groupe
   your_groups:            Vos groupes
   nb_players:             joueurs
   nb_groups:              groupes
+  nb_games:               parties
   players:                Joueurs
   edit:                   Editer
   save:                   Sauver

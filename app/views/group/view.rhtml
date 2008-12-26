@@ -25,7 +25,8 @@
 <% end %>
 </ol>
 
-<h3><%= I18n.t(:last_games) %></h3>
+<h3><%= I18n.t(:last_games) %> (<%= @group.games.size %> <%= I18n.t(:nb_games) %>)</h3>
+
 <ol>
 <%= render(:partial=>'game', :collection=>@games) %>
 </ol>

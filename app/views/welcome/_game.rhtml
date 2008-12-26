@@ -1,1 +1,8 @@
-<li><%= game.date %> <%= game.place %></li>
+<li>
+<b><%= link_to(game.name, :controller=>:game, :action=>:view, :id=>game.id) %></b>
+<b>Group</b>: <%= game.group.name %>
+(<%= game.type_to_s %>)
+<% if game.name != game.date.to_s %><%= game.date %><% end %>
+<b>Winner</b>: TODO
+<b>Resume</b>: <%= truncate(game.descr, :length=>90) %>
+</li>

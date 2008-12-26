@@ -1,4 +1,7 @@
 <h2 class="game"><%= @game.name %></h2>
+<%= I18n.t(:group) %>: <%= link_to(@group.name, :controller=>:group, :action=>:view, :id=>@group.id) %>
+(<%= @group.games.size %> <%= I18n.t(:nb_games) %>)
+
 
 <div class="button_bar">
 <% if session['user'] and session['user'].groups.include?(@group) %>
