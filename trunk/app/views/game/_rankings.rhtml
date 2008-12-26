@@ -1,5 +1,5 @@
 <li>
-<%= rankings.rank %>
-<b><%= rankings.name %></b>
-<%#= rankings.chips %>
+<div class='rank'><%= rankings.rank %></div>
+<div class='name' title='<%=rankings.name%>'><%= truncate(rankings.name,{:length=>12}) %></div>
+<%= rankings.gchips %>
 </li>

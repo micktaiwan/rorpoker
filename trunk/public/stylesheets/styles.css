@@ -193,7 +193,7 @@ label {
 }
 
 label.small {
-    width: 55px;
+  width: 55px;
 }
 
 .player_list {
@@ -241,6 +241,22 @@ input, select {
   padding: 5px;
   margin: 10px 0 0 0;
   }
+  
+.name {
+  width: 95px;
+  float: left;
+  text-align: right;
+  margin-right: 12px;
+  display: block;
+  font-weight: bold;
+}
+
+.rank {
+  float: left;
+  text-align: right;
+  display: block;
+  font-weight: bold;
+}
 
 .groupbox {
   border: 1px solid #AA9;

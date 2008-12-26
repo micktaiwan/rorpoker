@@ -30,7 +30,7 @@ fr:
   title_my_profile:       Mon profile
   title_change_my_pwd:    Changer de mot de passe
   add_new_player:         Ajouter un nouveau joueur
-  expl_create_game:       Une fois une partie jouée, vous pouvez l'enregistrer ici.
+  expl_create_game:       Pour organiser une partie, ou enregistrer une partie jouée. Les scores sont enregistrés sur la page suivante.
   comments:               Commentaires ou description
   game_place:             Lieu
   game_date:              Date
