@@ -1,7 +1,7 @@
 <h2><%= @game.name %></h2>
 
 <div class="button_bar">
-<% if session['user'].groups.include?(@group) %>
+<% if session['user'] and session['user'].groups.include?(@group) %>
   <%= link_to(I18n.t(:edit), {:controller=>'game',:action=>'edit_form', :id=>@game.id}, {:class=>:button}) %>
 <% end %>
 </div>
@@ -10,10 +10,13 @@
 <%= I18n.t(:game_place) %>: <%= @game.place %><br/>
 <%= I18n.t(:game_date) %>: <%= @game.date %><br/>
 
+<% if @game.descr != '' %>
 <div class="game_descr">
 <%= simple_format @game.descr %>
 </div>
+<% end %>
 
 <h3><%= I18n.t(:rankings) %></h3>
-<ol>
-</ol>
+<ul>
+  <%= render(:partial=>'rankings', :collection=>@game.players) %>
+</ul>

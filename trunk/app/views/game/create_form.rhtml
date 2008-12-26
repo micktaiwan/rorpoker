@@ -1,15 +1,9 @@
 <h2><%= I18n.t(:title_create_game)%></h2>
 
-Not done yet !
-
-<br/>
-<br/>
-<br/>
-<br/>
-
 <%= I18n.t :expl_create_game %><br/>
 <br/>
-<% form_tag :controller=>'game', :action=> "create" do %>
+
+<% form_tag({:controller=>'game', :action=>'create'},{:id=>'f'}) do %>
 <label><%= I18n.t :name %>:</label>
 <%= text_field(:game,:name,:value=>Date.today) %><br/>
 <label><%= I18n.t :game_date %>:</label>
@@ -22,14 +16,13 @@ Not done yet !
 
 <label for="player_list"><%= I18n.t :players %>:</label><br/>
 <ul id="player_list" class="player_list">
-<% for user in @group.users %>
-  <li><%= check_box(:players,:played) %> <b><%= user.name %></b> (<a href="mailto:<%= user.email %>"><%= user.email %></a>)</li>
-<% end %>
+  <%= render(:partial=>'player', :collection=>@group.users) %>
+  <li id="new_player" class="button_bar"><%= link_to_function(I18n.t(:add_new_player), "add_new_player(#{@group.id})", :class=>'btnlnk') %></li>
 </ul>
 
 <label><%= I18n.t :comments %>:</label>
 <%= text_area(:game,:descr, :cols=>60, :rows=>12) %><br/>
 
 <input type="submit" value="<%= I18n.t :submit %> &#187;" class="submitbutton" />
-<% if @message -%><div id="notice"><%= @message %></div><% end %>
+<%= hidden_field(:game,:group_id,:value=>@group.id) %>
 <% end -%>

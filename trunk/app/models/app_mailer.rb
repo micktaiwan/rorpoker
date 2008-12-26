@@ -28,19 +28,16 @@ class AppMailer < ActionMailer::Base
     @headers    = {}
   end
   
-  def invite_users(i,p,from)
-    @subject    = "[Poker] #{i.name} invited you on PTM"
-    @body["i"] = i
-    @body["p"] = p
+  def added_new_player(from,to,pass,group)
+    @subject    = "[Poker] #{from.name} added you on Poker Game Manager"
     @body["from"] = from
-    @recipients = i.email
-    if from.email != ''
-      @from       = from.email
-    else
-      @from       = 'protask@protaskm.com'
-    end
+    @body["to"] = to
+    @body["pass"] = pass
+    @body["group"] = group
+    @recipients = to.email
     @sent_on    = Time.now
     @headers    = {}
+    content_type "text/html"
   end
   
   def invite_result(i,txt)
@@ -51,27 +48,6 @@ class AppMailer < ActionMailer::Base
     @from       = 'protask@protaskm.com'
     @sent_on    = Time.now
     @headers    = {}
-  end
-  
-  def reminders(u,dates)
-    @subject    = "[Poker] Reminders for #{Date.today}"
-    @body["u"]  = u
-    @body["dates"] = dates
-    @recipients = u.email
-    @from       = 'protask@protaskm.com'
-    @sent_on    = Time.now
-    @headers    = {}
-  end
-  
-  def mail_changes(u,text)
-    @subject    = "[Poker] New movies"
-    @body["u"]  = u
-    @body["text"] = text
-    @recipients = u.email
-    @from       = 'protask@protaskm.com'
-    @sent_on    = Time.now
-    @headers    = {}
-    content_type "text/html"
   end
   
 end

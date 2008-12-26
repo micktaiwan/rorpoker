@@ -27,6 +27,5 @@ class GroupController < ApplicationController
     session['user'].groups << g if not session['user'].groups.include?(g)
     redirect_to(:action=>:view, :id=>g.id)
  end
-
   
 end
