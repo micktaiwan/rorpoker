@@ -12,7 +12,7 @@ class GameController < ApplicationController
     game = Game.new(params[:game])
     params[:players].each { |id|
       game.players << User.find(id.to_i)
-      }
+      } if params[:players]
     game.save
     redirect_to(:action=>:view, :id=>game.id)
   end

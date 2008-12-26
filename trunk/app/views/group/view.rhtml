@@ -1,4 +1,4 @@
-<h2><%= @group.name %></h2>
+<h2 class="group"><%= @group.name %></h2>
 <div class="button_bar">
 <% if session['user'] %>
   <% if not session['user'].groups.include?(@group) %>
@@ -10,7 +10,13 @@
 <% end %>
 </div>
 
+
+<% if @group.descr != '' %>
+<div class="game_descr">
 <%= simple_format @group.descr %>
+</div>
+<% end %>
+
 
 <h3><%= I18n.t(:rankings) %></h3>
 <ol>

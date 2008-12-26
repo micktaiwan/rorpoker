@@ -1,1 +1,4 @@
-<li><%= link_to(list.name,:controller=>:group,:action=>:view,:id=>list.id) %> (<%= list.users.size %>)</li>
+<li>
+<%= link_to(list.name,:controller=>:group,:action=>:view,:id=>list.id) %>
+(<%= list.games.size %>g, <%= list.users.size %>p)
+</li>

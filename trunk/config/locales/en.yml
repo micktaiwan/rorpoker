@@ -11,6 +11,7 @@ en:
   nb_groups:              groups
   players:                Players
   edit:                   Edit
+  save:                   Save
   menu_dashboard:         dashboard
   menu_profile:           profile
   menu_logout:            logout
@@ -24,6 +25,8 @@ en:
   title_edit_group:       Editing
   title_create_game:      Record a new game
   title_edit_game:        Editing a game
+  title_my_profile:       My profile
+  title_change_my_pwd:    Change my password
   add_new_player:         Add a new player
   expl_create_game:       Once a game has been played, you can record the game here.
   comments:               Comments or description

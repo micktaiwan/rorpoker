@@ -34,7 +34,7 @@ class AccountController < ApplicationController
         flash['error']  = ""
         if @user.save      
           session['user'] = User.authenticate(@user.email, params['user']['password'])
-          AppMailer.deliver_alert("Registration Alert","#{session['user']['name']} just registered on Movies")
+          AppMailer.deliver_alert("Registration Alert","#{session['user']['name']} just registered on Poker Tour Manager")
           #AppMailer.deliver_registration_mail(session['user']) #if not @user.email.blank?
           redirect_back_or_default :controller => "welcome"
         end
