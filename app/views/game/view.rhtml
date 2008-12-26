@@ -1,4 +1,4 @@
-<h2><%= @game.name %></h2>
+<h2 class="game"><%= @game.name %></h2>
 
 <div class="button_bar">
 <% if session['user'] and session['user'].groups.include?(@group) %>

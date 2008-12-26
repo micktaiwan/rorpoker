@@ -50,14 +50,12 @@
     <% end -%>
   <% else -%>
     <!-- sub menu -->
-    <% if cur!="myinfo" -%>
-       <div class='button'><%= link_to(I18n.t(:create_group), {:controller=>'group',:action=>'create_form'}) %></div>
-    <% end -%>
+    <div class='button'><%= link_to(I18n.t(:create_group), {:controller=>'group',:action=>'create_form'}) %></div>
     <!-- Group list -->
     <% if user.groups.size > 0 -%>
       <h3><%= I18n.t :your_groups -%></h3>
       <ul class="mylist">
-      <%= render(:partial=>'group/list', :collection=>user.groups.sort_by{|g| g.name.downcase}) %>
+      <%= render(:partial=>'group/list', :collection=>user.groups.sort_by{|g| -g.games.size}) %>
       </ul>
     <% end -%>
   <% end -%>

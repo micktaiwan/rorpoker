@@ -11,6 +11,7 @@ fr:
   nb_groups:              groupes
   players:                Joueurs
   edit:                   Editer
+  save:                   Sauver
   menu_dashboard:         accueil
   menu_profile:           profile
   menu_logout:            logout
@@ -24,6 +25,8 @@ fr:
   title_edit_group:       Edition
   title_create_game:      Sauvegarder un nouveau jeu
   title_edit_game:        Edition d'une partie
+  title_my_profile:       Mon profile
+  title_change_my_pwd:    Changer de mot de passe
   add_new_player:         Ajouter un nouveau joueur
   expl_create_game:       Une fois une partie jouée, vous pouvez l'enregistrer ici.
   comments:               Commentaires ou description

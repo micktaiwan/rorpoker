@@ -30,7 +30,7 @@ function ch_mail_options_verify() {
    
 </script>
 
-<h2>Mon profile</h2>
+<h2><%=I18n.t(:title_my_profile)%></h2>
 <%
 e = @user.email
 
@@ -51,11 +51,11 @@ if e != nil and  e != ''-%>
 <br />
 
 
-<h2>Changer de mot de passe</h2>
+<h2><%=I18n.t(:title_change_my_pwd)%></h2>
 <% form_tag :action => 'update' do %>
 <table id="data_pwd">
 <tr><td><%=I18n.t(:pwd)%></td><td><%= password_field(:user, :password, {:size => 15}) %></td></tr>
-<tr><td><%=I18n.t(:confirm)%></td><td><%= password_field(:user, :password_confirmation, {:size => 15}) %> <%=I18n.t(:expl_password)%></td></tr>
+<tr><td><%=I18n.t(:pwd_confirm)%></td><td><%= password_field(:user, :password_confirmation, {:size => 15}) %> <%=I18n.t(:expl_pwd_confirm)%></td></tr>
 <tr><td>&nbsp;</td><td><%= button_to_function(I18n.t(:save), "ch_pwd_verify()", {:class => 'button'}) %></td></tr>
 </table>
 <% end %>
