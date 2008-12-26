@@ -9,9 +9,9 @@
 <% end %>
 </div>
 
-<%= I18n.t(:game_type) %>: <%= @game.type_to_s %><br/>
-<%= I18n.t(:game_place) %>: <%= @game.place %><br/>
-<%= I18n.t(:game_date) %>: <%= @game.date %><br/>
+<b><%= I18n.t(:game_type) %>:</b> <%= @game.type_to_s %><br/>
+<b><%= I18n.t(:game_place) %>:</b> <%= @game.place %><br/>
+<b><%= I18n.t(:game_date) %>:</b> <%= @game.date %><br/>
 
 <% if @game.descr != '' %>
 <div class="game_descr">

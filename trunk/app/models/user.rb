@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   # just return a number does not return a rank, just sort all the users to have a rank
   # type is either :cash or :tourney
   def virtual_rank(type, group)
-    return Membership.find(:first,:conditions=>"user_id=#{self.id} and group_id=#{group.id}").chips if type == :cash
+    return chips(group.id) if type == :cash
     return tourney_rank(group) if type == :tourney
     raise "invalid type for rankings (#{type.to_s}})"
   end
