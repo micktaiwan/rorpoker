@@ -24,11 +24,20 @@ class GameController < ApplicationController
   
   def edit_form
     @game = Game.find(params[:id])
+    @group = @game.group
+    @checked = Hash.new(nil)
+    @group.users.each{ |u| @checked[u.id] = @game.players.include?(u) ? true : nil}
   end
 
   def edit
     game = Game.find(params[:id])
     game.update_attributes(params[:game])
+    if params[:players]
+      game.players.clear
+      params[:players].each { |id|
+        game.players << User.find(id.to_i)
+        } 
+    end
     game.save
     redirect_to(:action=>:view, :id=>game.id)
   end
@@ -50,7 +59,7 @@ class GameController < ApplicationController
       # player found or created
       player.groups << group if not player.groups.include?(group)
       player.save
-      p = esc_js(render_to_string(:partial => "player", :object=>player))
+      p = esc_js(render_to_string(:partial => "player", :object=>player, :locals=>{:checked=>{player.id=>true}}))
       render(:text=>"display_new_player('#{p}');")
     rescue Exception => e
       render(:text=>'alert("'+e+'");')

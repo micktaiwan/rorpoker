@@ -150,6 +150,11 @@ a:hover {
   padding: 0 20px 0 0;
 }
 
+#title {
+  float: left;
+  color: #aaa;
+}
+
 #user {
   display: inline;
   text-align: center;

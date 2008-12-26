@@ -1,5 +1,5 @@
 <li>
-<input type="checkbox" name="players[]" value="<%=player.id%>">
+<input type="checkbox" name="players[]" value="<%=player.id%>"<% if checked[player.id] %> checked<%end%>>
 <b><%= player.name %></b>
 (<a href="mailto:<%= player.email %>"><%= player.email %></a>)
 </li>
