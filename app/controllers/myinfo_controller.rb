@@ -12,7 +12,7 @@ class MyinfoController < ApplicationController
   # Ajaxed
   def update
     begin
-      u = session['user']
+      u = User.find(session['user']['id'])
       render(:text=>I18n.t(:errors_name_taken)) and return  if [] != User.find(:all,:conditions=>["id != ? and name = ?",u.id,params[:user][:name]])
       render(:text=>I18n.t(:errors_email_taken)) and return if [] != User.find(:all,:conditions=>["id != ? and email = ?",u.id,params[:user][:email]])
       u.update_attributes!(params[:user]) # raise an error
