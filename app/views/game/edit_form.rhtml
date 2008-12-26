@@ -1,10 +1,5 @@
 <h2><%= I18n.t(:title_edit_game)%></h2>
 
-Not done yet !
-
-<br/>
-<br/>
-
 <% form_tag :controller=>:game, :action=>:edit, :id=>@game.id do %>
 <label><%= I18n.t :name %>:</label>
 <%= text_field(:game,:name,:value=>Date.today) %><br/>
@@ -26,5 +21,5 @@ Not done yet !
 <%= text_area(:game,:descr, :cols=>60, :rows=>12) %><br/>
 
 <input type="submit" value="<%= I18n.t :submit %> &#187;" class="submitbutton" />
-<% if @message -%><div id="notice"><%= @message %></div><% end %>
+
 <% end -%>

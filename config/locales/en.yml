@@ -24,6 +24,7 @@ en:
   title_edit_group:       Editing
   title_create_game:      Record a new game
   title_edit_game:        Editing a game
+  add_new_player:         Add a new player
   expl_create_game:       Once a game has been played, you can record the game here.
   comments:               Comments or description
   game_place:             Place

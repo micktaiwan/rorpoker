@@ -24,6 +24,7 @@ fr:
   title_edit_group:       Edition
   title_create_game:      Sauvegarder un nouveau jeu
   title_edit_game:        Edition d'une partie
+  add_new_player:         Ajouter un nouveau joueur
   expl_create_game:       Une fois une partie jouée, vous pouvez l'enregistrer ici.
   comments:               Commentaires ou description
   game_place:             Lieu
