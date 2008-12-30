@@ -80,11 +80,13 @@ h4 {
 }
 
 h2.group {
-  background: #cdf;
+  padding: 0 0 0 50px;
+  background: #cdf url(/images/AK.jpg) no-repeat;
   }
 
 h2.game {
-  background: #cf3;
+  padding: 0 0 0 50px;
+  background: #cf3 url(/images/pique.png) no-repeat;
   }
 
 img {
@@ -171,6 +173,12 @@ ul.mylist {
   margin-left: 0;
   padding-left: 20px;
   list-style-image: url(/images/bullet02.gif);
+}
+
+ul.game_list {
+  margin-left: 0;
+  padding-left: 20px;
+  list-style-image: url(/images/game.png);
 }
 
 
