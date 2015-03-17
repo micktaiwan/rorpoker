@@ -1,0 +1,1 @@
+A RoR site to organize your (real) poker games with your friends
